@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MonkeyFestLatam.MasterXFmaps.AppShell"
+    xmlns:views="clr-namespace:MonkeyFestLatam.MasterXFmaps.Views"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    FlyoutBackgroundColor="#8040FF">
+
+    <!--Styles resources-->
+     <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor" 
+                    Value="White" />
+            <Setter Property="Shell.TitleColor" 
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor" 
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" 
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem" 
+               BasedOn="{StaticResource BaseStyle}" />
+
+        <Style x:Key="TrackingShellStyle" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#4A3DFF" />
+        </Style>
+        <Style x:Key="PickingShellStyle" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#643DEB" />
+        </Style>
+         <Style x:Key="SearchShellStyle" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#A46CFF" />
+        </Style>
+        <Style x:Key="MapsShellStyle" 
+               TargetType="Element" 
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor" 
+                    Value="#9631EB" />
+        </Style>
+    </Shell.Resources>
+
+    <!--Config Header-->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black">
+            <Image
+                Aspect="AspectFill" 
+                Source="Icon.png" 
+                Opacity="0.6" />
+            <Label
+                Text="Monkey Fest Latam 2019" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center" />
+        </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+
+    <FlyoutItem
+        FlyoutDisplayOptions="AsMultipleItems">
+      
+        <ShellContent
+           Route="tracking"
+           Title="Tracking"
+           Icon="track.png"
+           Style="{StaticResource TrackingShellStyle}"
+           ContentTemplate="{DataTemplate views:TrackingPage}" />
+      
+          <ShellContent
+             Route="pin"
+             Title="Picking Style"
+             Icon="pin.png"
+             Style="{StaticResource PickingShellStyle}"
+             ContentTemplate="{DataTemplate views:PickingPage}" />
+
+        <ShellContent
+             Route="search_places"
+             Title="Search a place"
+             Icon="search.png"
+             Style="{StaticResource SearchShellStyle}"
+             ContentTemplate="{DataTemplate views:SearchPlacesPage}" />
+
+        <ShellContent
+             Route="map_styling"
+             Title="Maps Styling"
+             Icon="maps.png"
+             Style="{StaticResource MapsShellStyle}"
+             ContentTemplate="{DataTemplate views:MapsStylingPage}" />
+      
+    </FlyoutItem>
+
+    <MenuItem Text="Agenda Monkey Fest"
+              Icon="agenda.png"
+              Command="{Binding AgendaMonkeyFestCommand}"
+              CommandParameter="https://www.monkeyfestlatam.io/schedule.html#day2" />
+
+    <MenuItem Text="Help"
+              Icon="help.png"
+              Command="{Binding HelpMeMonkeyFestCommand}"
+              CommandParameter="https://julitom25.gitbook.io/mastering-in-xamarin-forms-maps/" />
+</Shell>

@@ -1,9 +1,8 @@
-﻿using System;
-namespace MonkeyFestLatam.MasterXFmaps
+﻿namespace MonkeyFestLatam.MasterXFmaps
 {
     public static class GlobalConfiguration
     {
-        public const string GoogleMapsApiKey = "PUT HERE YOUR API KEY OF GOOGLE MAPS";
+        public const string GoogleMapsApiKey = "PUT YOUR API KEY HERE";
 
         //Data to test Tracking
         public const string OriginLatitude = "6.233544";

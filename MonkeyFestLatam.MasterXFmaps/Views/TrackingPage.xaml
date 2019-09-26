@@ -8,12 +8,13 @@
     NavigationPage.BackButtonTitle=""
     NavigationPage.HasNavigationBar="false"
     CalculateCommand="{Binding CalculateRouteCommand}"
-    UpdateCommand="{Binding UpdatePositionCommand}">
+    UpdateCommand="{Binding UpdatePositionCommand}"
+    Title="Tracking IU">
     <ContentPage.BindingContext>
         <vm:TrackingViewModel/>
     </ContentPage.BindingContext>
     <StackLayout>
-          <maps:Map
+        <maps:Map
                 x:Name="map"
                 InitialCameraUpdate="40.77, -73.93, 13, 30, 60"
                 VerticalOptions="FillAndExpand"

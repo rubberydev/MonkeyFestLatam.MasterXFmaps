@@ -25,11 +25,21 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Helpers\" />
     <Folder Include="Enum\" />
+    <Folder Include="MapStyles\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="MapStyleDark.json" />
+    <None Remove="MapStyleNight.json" />
+    <None Remove="MapStyleRetro.json" />
+    <None Remove="MapStyles\MapStyleAubergine.json" />
+    <None Remove="MapStyles\MapStyleDark.json" />
+    <None Remove="MapStyles\MapStyleNight.json" />
+    <None Remove="MapStyles\MapStyleRetro.json" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MapStyleDark.json" />
+    <EmbeddedResource Include="MapStyles\MapStyleAubergine.json" />
+    <EmbeddedResource Include="MapStyles\MapStyleDark.json" />
+    <EmbeddedResource Include="MapStyles\MapStyleNight.json" />
+    <EmbeddedResource Include="MapStyles\MapStyleRetro.json" />
   </ItemGroup>
 </Project>

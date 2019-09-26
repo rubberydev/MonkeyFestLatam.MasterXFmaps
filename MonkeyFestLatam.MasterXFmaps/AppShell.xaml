@@ -71,6 +71,7 @@
 
 
     <FlyoutItem
+        Route="maps"
         FlyoutDisplayOptions="AsMultipleItems">
       
         <ShellContent

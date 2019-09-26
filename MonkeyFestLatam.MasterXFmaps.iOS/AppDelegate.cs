@@ -23,6 +23,9 @@ namespace MonkeyFestLatam.MasterXFmaps.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            Xamarin.FormsGoogleMaps.Init(GlobalConfiguration.GoogleMapsApiKey);
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

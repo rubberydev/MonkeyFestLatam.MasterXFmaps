@@ -122,6 +122,9 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.1.0.555618" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Xamarin.Forms.GoogleMaps">
+      <Version>3.2.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -138,5 +141,6 @@
     <BundleResource Include="Resources\help.png" />
     <BundleResource Include="Resources\agenda.png" />
     <BundleResource Include="Resources\maps.png" />
+    <BundleResource Include="Resources\car.png" />
   </ItemGroup>
 </Project>

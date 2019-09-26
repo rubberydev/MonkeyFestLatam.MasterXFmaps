@@ -1,5 +1,22 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MonkeyFestLatam.MasterXFmaps.Views.TrackingPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MonkeyFestLatam.MasterXFmaps.Views.TrackingPage"
+    xmlns:vm="clr-namespace:MonkeyFestLatam.MasterXFmaps.ViewModels"
+    xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    NavigationPage.BackButtonTitle=""
+    NavigationPage.HasNavigationBar="false"
+    CalculateCommand="{Binding CalculateRouteCommand}"
+    UpdateCommand="{Binding UpdatePositionCommand}">
+    <ContentPage.BindingContext>
+        <vm:TrackingViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout>
+          <maps:Map
+                x:Name="map"
+                InitialCameraUpdate="40.77, -73.93, 13, 30, 60"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"/>
+    </StackLayout>
 </ContentPage>

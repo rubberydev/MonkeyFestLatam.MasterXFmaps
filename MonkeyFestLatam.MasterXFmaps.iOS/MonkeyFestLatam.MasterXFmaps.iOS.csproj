@@ -142,5 +142,14 @@
     <BundleResource Include="Resources\agenda.png" />
     <BundleResource Include="Resources\maps.png" />
     <BundleResource Include="Resources\car.png" />
+    <BundleResource Include="Resources\ic_location.png" />
+    <BundleResource Include="Resources\ic_search%403x.png" />
+    <BundleResource Include="Resources\ic_search.png" />
+    <BundleResource Include="Resources\ic_search%402x.png" />
+    <BundleResource Include="Resources\ic_location%403x.png" />
+    <BundleResource Include="Resources\ic_location%402x.png" />
+    <BundleResource Include="Resources\ic_location_red.png" />
+    <BundleResource Include="Resources\ic_location_red%402x.png" />
+    <BundleResource Include="Resources\ic_location_red%403x.png" />
   </ItemGroup>
 </Project>

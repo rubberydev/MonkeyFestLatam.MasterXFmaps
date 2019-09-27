@@ -1,5 +1,75 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MonkeyFestLatam.MasterXFmaps.Views.PickingPage">
-    <ContentPage.Content>
-    </ContentPage.Content>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MonkeyFestLatam.MasterXFmaps.ViewModels"
+    xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    x:Class="MonkeyFestLatam.MasterXFmaps.Views.PickingPage"
+    NavigationPage.BackButtonTitle=""
+    NavigationPage.HasNavigationBar="false"
+    CalculateCommand="{Binding CalculateRouteCommand}"
+    UpdateCommand="{Binding UpdatePositionCommand}"
+    Title="Setting Pickup">
+    <ContentPage.BindingContext>
+        <vm:SearchPlacesViewModel/>
+    </ContentPage.BindingContext>
+    <Grid>
+    <maps:Map
+        x:Name="map"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand"/>
+        
+         <Image
+            Source="ic_location_red.png"
+            IsVisible="{Binding IsRouteNotRunning}"
+            HeightRequest="35"
+            WidthRequest="35"
+            VerticalOptions="CenterAndExpand"
+            HorizontalOptions="CenterAndExpand"/>
+        
+           <StackLayout BackgroundColor="White"
+                        Orientation="Horizontal"
+                        VerticalOptions="Start"
+                        Padding="10"
+                        x:Name="searchLayout"
+                        Margin="30,50,30,0">
+                       <Image Source="ic_search"
+                              HeightRequest="15"
+                              WidthRequest="15"/>
+                       <Label HorizontalOptions="FillAndExpand"
+                              LineBreakMode="TailTruncation"
+                              FontAttributes="Italic"
+                              Text="Search Place"
+                              TextColor="Gray"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                               Tapped="OnEnterAddressTapped" />
+                   </StackLayout.GestureRecognizers>
+           </StackLayout>
+        
+           <Button Text="Choose Pickup"
+                   Margin="50,120"
+                   IsVisible="{Binding IsRouteNotRunning}"
+                   Clicked="OnEnterAddressTapped"
+                   Command="{Binding GetLocationNameCommand}"
+                   CommandParameter="{Binding Path=CameraPosition.Target,Source={x:Reference map}}"
+                   x:Name="chooseLocationButton"
+                   BackgroundColor="#643DEB"
+                   TextColor="White"
+                   FontSize="17"
+                   VerticalOptions="EndAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+        
+           <Button Text="Stop"
+                   Margin="50,60"
+                   Clicked="Handle_Stop_Clicked"
+                   Command="{Binding StopRouteCommand}"
+                   IsVisible="false"
+                   x:Name="stopRouteButton"
+                   BackgroundColor="Red"
+                   TextColor="White"
+                   FontSize="17"
+                   VerticalOptions="EndAndExpand"
+                   HorizontalOptions="FillAndExpand"/>
+    </Grid>
 </ContentPage>

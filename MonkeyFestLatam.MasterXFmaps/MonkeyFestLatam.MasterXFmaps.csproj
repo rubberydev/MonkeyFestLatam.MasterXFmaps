@@ -35,11 +35,20 @@
     <None Remove="MapStyles\MapStyleDark.json" />
     <None Remove="MapStyles\MapStyleNight.json" />
     <None Remove="MapStyles\MapStyleRetro.json" />
+    <None Remove="FodyWeavers.xml" />
+    <None Remove="MapStyles\MapStyleUber.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\SearchPlacesPage.xaml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MapStyles\MapStyleAubergine.json" />
     <EmbeddedResource Include="MapStyles\MapStyleDark.json" />
     <EmbeddedResource Include="MapStyles\MapStyleNight.json" />
     <EmbeddedResource Include="MapStyles\MapStyleRetro.json" />
+    <EmbeddedResource Include="MapStyles\MapStyleUber.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\SearchPlacesPage.xaml.cs" />
   </ItemGroup>
 </Project>

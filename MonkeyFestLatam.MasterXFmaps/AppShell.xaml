@@ -37,12 +37,7 @@
             <Setter Property="Shell.BackgroundColor" 
                     Value="#643DEB" />
         </Style>
-         <Style x:Key="SearchShellStyle" 
-               TargetType="Element" 
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor" 
-                    Value="#A46CFF" />
-        </Style>
+
         <Style x:Key="MapsShellStyle" 
                TargetType="Element" 
                BasedOn="{StaticResource BaseStyle}">
@@ -68,39 +63,28 @@
         </Grid>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
-
-
     <FlyoutItem
-        Route="maps"
         FlyoutDisplayOptions="AsMultipleItems">
-      
         <ShellContent
            Route="tracking"
            Title="Tracking"
            Icon="track.png"
            Style="{StaticResource TrackingShellStyle}"
            ContentTemplate="{DataTemplate views:TrackingPage}" />
-      
-          <ShellContent
-             Route="pin"
-             Title="Picking Style"
-             Icon="pin.png"
-             Style="{StaticResource PickingShellStyle}"
-             ContentTemplate="{DataTemplate views:PickingPage}" />
-
-        <ShellContent
-             Route="search_places"
-             Title="Search a place"
-             Icon="search.png"
-             Style="{StaticResource SearchShellStyle}"
-             ContentTemplate="{DataTemplate views:SearchPlacesPage}" />
 
         <ShellContent
              Route="map_styling"
              Title="Maps Styling"
-             Icon="maps.png"
+             Icon="search.png"
              Style="{StaticResource MapsShellStyle}"
              ContentTemplate="{DataTemplate views:MapsStylingPage}" />
+
+        <ShellContent
+             Route="pin"
+             Title="Setting PickUp"
+             Icon="pin.png"
+             Style="{StaticResource PickingShellStyle}"
+             ContentTemplate="{DataTemplate views:PickingPage}" />
       
     </FlyoutItem>
 

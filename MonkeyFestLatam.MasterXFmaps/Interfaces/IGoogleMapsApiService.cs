@@ -6,5 +6,7 @@
     public interface IGoogleMapsApiService
     {
         Task<GoogleDirectionsApiResponse> GetDirections(string originLatitude, string originLongitude, string destinationLatitude, string destinationLongitude);
+        Task<GooglePlaceAutoCompleteResult> GetPlaces(string text);
+        Task<GooglePlace> GetPlaceDetails(string placeId);
     }
 }

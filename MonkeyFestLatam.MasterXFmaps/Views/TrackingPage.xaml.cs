@@ -9,7 +9,7 @@
     public partial class TrackingPage : ContentPage
     {
         public static readonly BindableProperty CalculateCommandProperty =
-            BindableProperty.Create(nameof(CalculateCommand), typeof(ICommand), typeof(MainPage), null, BindingMode.TwoWay);
+            BindableProperty.Create(nameof(CalculateCommand), typeof(ICommand), typeof(TrackingPage), null, BindingMode.TwoWay);
 
         public ICommand CalculateCommand
         {
@@ -18,7 +18,7 @@
         }
 
         public static readonly BindableProperty UpdateCommandProperty =
-          BindableProperty.Create(nameof(UpdateCommand), typeof(ICommand), typeof(MainPage), null, BindingMode.TwoWay);
+          BindableProperty.Create(nameof(UpdateCommand), typeof(ICommand), typeof(TrackingPage), null, BindingMode.TwoWay);
 
         public ICommand UpdateCommand
         {
@@ -81,8 +81,8 @@
             {
                 Type = PinType.Place,
                 Position = new Position(polyline.Positions.First().Latitude, polyline.Positions.First().Longitude),
-                Label = "First",
-                Address = "First",
+                Label = "Start and ",
+                Address = "running",
                 Tag = string.Empty,
                 Icon = (Device.RuntimePlatform == Device.iOS) ? BitmapDescriptorFactory.FromView(new Image()
                 {
@@ -97,8 +97,8 @@
             {
                 Type = PinType.Place,
                 Position = new Position(polyline.Positions.Last().Latitude, polyline.Positions.Last().Longitude),
-                Label = "Last",
-                Address = "Last",
+                Label = "Target",
+                Address = "Place",
                 Tag = string.Empty
             };
             map.Pins.Add(pin1);

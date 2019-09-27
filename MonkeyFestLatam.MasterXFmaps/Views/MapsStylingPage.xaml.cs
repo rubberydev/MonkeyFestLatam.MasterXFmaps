@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using MonkeyFestLatam.MasterXFmaps.Enum;
-using Xamarin.Forms;
-using Xamarin.Forms.GoogleMaps;
-
-namespace MonkeyFestLatam.MasterXFmaps.Views
+﻿namespace MonkeyFestLatam.MasterXFmaps.Views
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using MonkeyFestLatam.MasterXFmaps.Enum;
+    using Xamarin.Forms;
+    using Xamarin.Forms.GoogleMaps;
+
     public partial class MapsStylingPage : ContentPage
     {
         private List<string> StylesList { get; set; }
@@ -17,6 +17,7 @@ namespace MonkeyFestLatam.MasterXFmaps.Views
             this.StylesList = new List<string>()
             {
                 StylesEnum.DARK.ToString(),
+                StylesEnum.UBER.ToString(),
                 StylesEnum.RETRO.ToString(),
                 StylesEnum.NIGHT.ToString(),
                 StylesEnum.AUBERGINE.ToString()
@@ -35,6 +36,9 @@ namespace MonkeyFestLatam.MasterXFmaps.Views
             {
                 case StylesEnum.DARK:
                     stream = assembly.GetManifestResourceStream($"MonkeyFestLatam.MasterXFmaps.MapStyles.MapStyleDark.json");
+                    break;
+                case StylesEnum.UBER:
+                    stream = assembly.GetManifestResourceStream($"MonkeyFestLatam.MasterXFmaps.MapStyles.MapStyleUber.json");
                     break;
                 case StylesEnum.RETRO:
                     stream = assembly.GetManifestResourceStream($"MonkeyFestLatam.MasterXFmaps.MapStyles.MapStyleRetro.json");

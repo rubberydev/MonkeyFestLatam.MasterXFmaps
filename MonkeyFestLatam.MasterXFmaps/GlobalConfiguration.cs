@@ -2,7 +2,7 @@
 {
     public static class GlobalConfiguration
     {
-        public const string GoogleMapsApiKey = "PUT YOUR API KEY HERE";
+        public const string GoogleMapsApiKey = "PUT YOUR API KEY HERE...";
 
         //Data to test Tracking
         public const string OriginLatitude = "6.233544";

@@ -1,11 +1,10 @@
-﻿using Android.App;
-using Android.Content.PM;
-using Android.OS;
-using Android.Runtime;
-using Xamarin.Forms.GoogleMaps.Android;
-
-namespace MonkeyFestLatam.MasterXFmaps.Droid
+﻿namespace MonkeyFestLatam.MasterXFmaps.Droid
 {
+    using Android.App;
+    using Android.Content.PM;
+    using Android.OS;
+    using Android.Runtime;
+
     [Activity(Label = "TrackingSample", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -17,14 +16,8 @@ namespace MonkeyFestLatam.MasterXFmaps.Droid
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
-            // Override default BitmapDescriptorFactory by your implementation. 
-            var platformConfig = new PlatformConfig
-            {
-                BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
-            };
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState, platformConfig); // initialize for Xamarin.Forms.GoogleMaps
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState); // initialize for Xamarin.Forms.GoogleMaps
             LoadApplication(new App());
         }
 

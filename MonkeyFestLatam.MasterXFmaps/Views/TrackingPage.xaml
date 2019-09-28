@@ -5,8 +5,6 @@
     x:Class="MonkeyFestLatam.MasterXFmaps.Views.TrackingPage"
     xmlns:vm="clr-namespace:MonkeyFestLatam.MasterXFmaps.ViewModels"
     xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
-    NavigationPage.BackButtonTitle=""
-    NavigationPage.HasNavigationBar="false"
     CalculateCommand="{Binding CalculateRouteCommand}"
     UpdateCommand="{Binding UpdatePositionCommand}"
     Title="Tracking IU">

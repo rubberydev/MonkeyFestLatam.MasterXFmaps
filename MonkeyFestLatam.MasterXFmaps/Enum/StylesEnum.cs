@@ -1,5 +1,4 @@
-﻿using System;
-namespace MonkeyFestLatam.MasterXFmaps.Enum
+﻿namespace MonkeyFestLatam.MasterXFmaps.Enum
 {
     public enum StylesEnum
     {

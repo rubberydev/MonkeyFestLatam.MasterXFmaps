@@ -7,7 +7,7 @@
 	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
 	<uses-feature android:name="android.hardware.location.network" android:required="false" />
 	<application android:label="MonkeyFestLatam.MasterXFmaps.Android">
-		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PUT YOUR API KEY HERE..." />
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="PUT YOUR API KEY HERE" />
 		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
 	</application>
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
